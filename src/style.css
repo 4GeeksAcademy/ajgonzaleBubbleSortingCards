@@ -1,1 +1,15 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background-color: darkolivegreen;
+}
+
+.card {
+  width: 40px;
+  background-color: white;
+  margin: 5px;
+}
+
+.backwards {
+  transform: scale(1, -1);
+}
