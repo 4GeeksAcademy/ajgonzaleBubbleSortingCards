@@ -27,18 +27,18 @@ function createCard() {
   switch (suits.indexOf(suit)) {
     //diamons
     case 0:
-      cardValue += 200;
+      cardValue += 0.2;
       break;
     //hearts
     case 1:
-      cardValue += 100;
+      cardValue += 0.1;
       break;
     //spade
     case 2:
       break;
     //club
     case 3:
-      cardValue += 300;
+      cardValue += 0.3;
       break;
   }
 
@@ -112,23 +112,22 @@ function createCardByValue(value, divId) {
   let suit = "";
   let color = "";
 
-  console.log("f", value);
-  if (value < 100) {
+  let number = numbers[Math.floor(value)];
+
+  value = value - Math.floor(value);
+
+  if (value < 0.1) {
     suit = suits[2];
-  } else if (value < 200) {
+  } else if (value < 0.2) {
     suit = suits[1];
-    value -= 100;
-    color = "text-danger";
-  } else if (value < 300) {
+    color = "text-dang;er";
+  } else if (value < 0.3) {
     suit = suits[0];
-    value -= 200;
     color = "text-danger";
   } else {
     suit = suits[3];
-    value -= 300;
   }
-
-  let number = numbers[value];
+  
   let html = `<div class="col-12 text-start spade ${color}">
             ${suit}
           </div><div class="col-12 number text-center ${color}">
